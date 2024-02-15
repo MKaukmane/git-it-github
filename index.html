@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>41 paskaita</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <main>
+        <section> <!-- Git -->
+            <h1>Git</h1>
+            <p>Git - populiariausia kodo versijavimo programa.</p>
+            <h2>Git komandos</h2>
+            <ul>
+                <li>git init - sukuria git repozitoriją dabartiniame aplankale</li>
+                <li>git status - nurodo informaciją apie lokalios git repozitorijos statusą</li>
+                <li>git add - prideda nurodytus failus prie commit paruoštų failų (stage)</li>
+                <li>rm --cached - išima nurodytus failu iš stage zonos (unstage)</li>
+                <li>commit -m "žinutė" - sukuria kodo versiją iš stage failų ir prideda žinutę apie pakitimus (ne ilgesnė nei 50 simbolių)</li>
+                <li>restore - grąžina nurodytus failus į buvusio commit būseną (panaikina naujus pakitimus po paskutinio commit)</li>
+                <li>push - iš lokalios repozitorijos nusiunčia commit į išorinę repozitoriją</li>
+                <li>pull - iš išorinės repozitorijos atsiunčia commit į lokalią repozitoriją</li>
+                <li>clone - klonuoja nurodytą repozitoriją iš išorinės repozitorijos</li>
+                <li>log - išveda commit sąrašą</li>
+                <li>chechout commitID|branchName - pareina į nurodytą kodo versiją ARBA</li>
+                <li>branch naujosSakosPavadinimas - sukuria naują šaką</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Branch protection rules</h1>
+            <p>Vienas svarbiausių šakų apsaugos taisyklių yra "Pull Request" (bandymas vienos šakos commit sukelti į kitą šaką).<br>
+            Pull Request dar galima suteikti "require approvals", kuris reikalauja, kad nurodytas kiekis kitų projekto dalyvių patvirtintų Pull Request.</p>
+        </section>
+        <section>
+            <h1>Eiliškumas Pull Request</h1>
+            <ol>
+                <li>Susikurti naują šaką - git branch newBranchName</li>
+                <li>Nueiti į tą naują šaką - git checkout newBranchName</li>
+                <li>Atlieki užduotį, kurią apsiėmei padaryti
+                <ol>
+                    <li>Add pakitusius failus - git add .</li>
+                    <li>Commit pakitimus - git commit -m "Žinutė apie pakitimus"</li>
+                </ol>
+                </li>
+                <li>Nueini į main/master šaką - git checkout main|master</li>
+                <li>Atnaujini main/master šaką - git pull</li>
+                <li>Nueini į tą naują šaką - git checkout newBranchName</li>
+                <li>Sujungi savo šaką su main ir išsprendi galimai atsiradusius konfliktus - git merge main/master</li>
+                <li>Musiunti tos naujos šakos pakitimus į GitHub - git push</li>
+                <li>GitHub sukurti Pull Request</li>
+                <li>Kiti komandos nariai patvirtina arba atmeta Pull Request</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
